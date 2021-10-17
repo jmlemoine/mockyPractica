@@ -32,7 +32,7 @@ public class StudentController {
     @GetMapping("list")
     public String showUpdateForm(Model model) {
         model.addAttribute("students", studentRepository.findAll());
-        return "index";
+        return "indexx";
     }
 
     @PostMapping("add")
@@ -63,7 +63,7 @@ public class StudentController {
 
         studentRepository.save(student);
         model.addAttribute("students", studentRepository.findAll());
-        return "index";
+        return "indexx";
     }
 
     @GetMapping("delete/{id}")
@@ -72,7 +72,7 @@ public class StudentController {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         studentRepository.delete(student);
         model.addAttribute("students", studentRepository.findAll());
-        return "index";
+        return "indexx";
     }
 
 }
