@@ -1,4 +1,4 @@
-package com.example.mockypractica.security;
+/*package com.example.mockypractica.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -42,11 +42,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //.defaultSuccessUrl("/dashboard", true)
                 //.permitAll().and().logout();//.permitAll();
-    }
+    //}
 
     /*@Bean
     public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }*/
 
-}
+//}
