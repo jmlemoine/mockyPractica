@@ -16,11 +16,18 @@ public class AppController {
         //return "redirect:login";
     }*/
 
-    @GetMapping("/user")
+    /*@GetMapping("/user")
     public String getUser() {
         //return "index";
         return "<h1>Klk con User</h1>";
         //return "redirect:login";
+    }*/
+
+    @RequestMapping(value = /*"/admin"*/"/user", method = RequestMethod.GET)
+    public ModelAndView user() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("klkUser");
+        return model;
     }
 
     /*@GetMapping("/admin")
@@ -29,7 +36,7 @@ public class AppController {
         return "klk";
     }*/
 
-    @RequestMapping(value = /*"/admin"*/"/", method = RequestMethod.GET)
+    @RequestMapping(value = /*"/admin"*/"/admin", method = RequestMethod.GET)
     public ModelAndView admin() {
         ModelAndView model = new ModelAndView();
         model.setViewName("klk");
