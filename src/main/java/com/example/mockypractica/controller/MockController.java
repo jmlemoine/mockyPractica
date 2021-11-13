@@ -32,10 +32,21 @@ public class MockController {
         return "add-mock";
     }
 
+    @GetMapping("signupUser")
+    public String showSignUpFormUser(Mock mock) {
+        return "add-mockUser";
+    }
+
     @GetMapping("list")
     public String showUpdateForm(Model model) {
         model.addAttribute("mocks", mockRepository.findAll());
         return "klk";
+    }
+
+    @GetMapping("listUser")
+    public String showUpdateFormUser(Model model) {
+        model.addAttribute("mocks", mockRepository.findAll());
+        return "klkUser";
     }
 
     @PostMapping("add")
@@ -45,6 +56,15 @@ public class MockController {
         }
         mockRepository.save(mock);
         return "redirect:list";
+    }
+
+    @PostMapping("addUser")
+    public String addMockUser(@Valid Mock mock, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "add-mockUser";
+        }
+        mockRepository.save(mock);
+        return "redirect:listUser";
     }
 
     /*@GetMapping("edit/{id}")
