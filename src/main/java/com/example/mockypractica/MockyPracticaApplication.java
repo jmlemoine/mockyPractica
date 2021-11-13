@@ -8,6 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
@@ -25,7 +26,7 @@ public class MockyPracticaApplication {
         Users result = restTemplate.getForObject(uri, Users.class);
         System.out.println(result);*/
 
-        final String uri = "https://run.mocky.io/v3/8505f50b-e094-4077-9c4e-83fd3ec3e94f";//"https://searchEmployee...";
+        /*final String uri = "https://run.mocky.io/v3/8505f50b-e094-4077-9c4e-83fd3ec3e94f";//"https://searchEmployee...";
 
         JSONObject jsonResponse = null;
 
@@ -49,14 +50,16 @@ public class MockyPracticaApplication {
             System.out.println("\nName: "+value);
         }catch(JSONException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
-    @ResponseBody
+
+
+    /*@ResponseBody
     @RequestMapping(value = "/testclient")
     public String testclient()
     {
         return "{\"hello\":\"world\"}";
-    }
+    }*/
 
 }

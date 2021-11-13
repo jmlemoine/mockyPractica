@@ -1,13 +1,13 @@
 package com.example.mockypractica.ApplicationRunner;
 
-//import com.example.mockypractica.model.Employee;
+/*import com.example.mockypractica.model.Employee;
 import com.example.mockypractica.model.API;
-import com.example.mockypractica.repository.APIRepository;
+import com.example.mockypractica.repository.APIRepository;*/
 import org.json.*;
-import com.example.mockypractica.model.Student;
+/*import com.example.mockypractica.model.Student;
 import com.example.mockypractica.model.Usuario;
 import com.example.mockypractica.repository.StudentRepository;
-import com.example.mockypractica.repository.UsuarioRepository;
+import com.example.mockypractica.repository.UsuarioRepository;*/
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-    private final StudentRepository studentRepository;
+    /*private final StudentRepository studentRepository;
     private final UsuarioRepository usuarioRepository;
     private final APIRepository apiRepository;
 
@@ -26,7 +26,7 @@ public class DataLoader implements ApplicationRunner {
         this.studentRepository = studentRepository;
         this.usuarioRepository = usuarioRepository;
         this.apiRepository = apiRepository;
-    }
+    }*/
 
     /*@Autowired
     public DataLoader(StudentRepository studentRepository, UsuarioRepository usuarioRepository) {
@@ -50,7 +50,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-        final String uri = "https://run.mocky.io/v3/8505f50b-e094-4077-9c4e-83fd3ec3e94f";//"https://searchEmployee...";
+        /*final String uri = "https://run.mocky.io/v3/8505f50b-e094-4077-9c4e-83fd3ec3e94f";//"https://searchEmployee...";
 
         JSONObject jsonResponse = null;
 
@@ -79,13 +79,13 @@ public class DataLoader implements ApplicationRunner {
             System.out.println("\nName: "+valueName);
         }catch(JSONException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        studentRepository.save(new Student("Jean Melvin Lemoine", "jeanmelvinlp27@gmail.com", Long.parseLong("8298179117")));
+        /*studentRepository.save(new Student("Jean Melvin Lemoine", "jeanmelvinlp27@gmail.com", Long.parseLong("8298179117")));
         usuarioRepository.save(new Usuario("Jean Lemoine", "jeanmelvinlp27@gmail.com", "admin"));
         usuarioRepository.save(new Usuario("Roselin Sosa", "moxy04@gmail.com", "user"));
         apiRepository.save(new API(valueId, valueName, valueAddress));
-        //employeeRepository.save(new Employee(61206L, "Jean Lemoine", 25000, "TI"));
+        employeeRepository.save(new Employee(61206L, "Jean Lemoine", 25000, "TI"));*/
 
     }
 
