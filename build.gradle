@@ -2,16 +2,22 @@ plugins {
     id 'org.springframework.boot' version '2.5.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+mainClassName='com.example.mockypractica.MockyPracticaApplication'
+
 repositories {
     mavenCentral()
 }
-
+bootJar{
+    version = null
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -25,7 +31,7 @@ dependencies {
     implementation 'org.json:json:20171018'
     implementation 'junit:junit:4.13.1'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.h2database:h2'
+    implementation 'com.h2database:h2'
     implementation 'io.springfox:springfox-swagger2:2.9.2'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -33,6 +39,21 @@ dependencies {
 
 }
 
+
+/*shadowJar{
+    baseName = 'app'
+    classifier = ''
+    archiveVersion = ''
+}*/
+
+/**
+ * tarea necesaria para heroku si optamos por la tarea de Shadowjar
+ * en el archivo Procfile debe estar el siguiente comando:
+ * web: java -jar build/libs/app.jar
+ */
+/*task stage {
+    dependsOn shadowJar
+}*/
 test {
     useJUnitPlatform()
 }

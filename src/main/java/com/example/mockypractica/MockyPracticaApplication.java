@@ -3,6 +3,7 @@ package com.example.mockypractica;
 import org.json.*;
 import org.json.*;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -12,10 +13,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Arrays;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Random;
+import org.h2.tools.Server;
+import java.sql.SQLException;
+
 
 @SpringBootApplication
+@EnableAutoConfiguration
 public class MockyPracticaApplication {
 
     public static void main(String[] args) {
@@ -61,5 +74,11 @@ public class MockyPracticaApplication {
     {
         return "{\"hello\":\"world\"}";
     }*/
+
+    /**
+     * Para subir H2 modo servidor en Spring Boot.
+     @return
+     @throws SQLException
+     */
 
 }
